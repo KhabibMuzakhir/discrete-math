@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title>Prototype 1 lab of JS</title>
+</head>
+<body>
+
+	<script>
+		var mass1 = [4, 1, 2, 3];
+		var mass2 = [1, 2, 2, 3];
+		function khaoutput(mass)
+		{
+			for(var i = 0; i < mass.length; i++)
+			{
+			document.write(mass[i]);
+			}
+		}
+		khaoutput(mass2);
+	</script>
+		
+</body>
+</html>

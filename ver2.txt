@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>Prototype 1 lab of JS</title>
+</head>
+<body>
+
+	<script>
+		var arr1;
+		var arr2;
+		var mas1;
+		var mas2;
+		var newarr1 = [];
+		
+		function norepeat(cvalue, farr) 
+		{
+			for(var k = 0; k < farr.length; k++)
+			{
+				if(cvalue == farr[k])
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		function union(mass1, mass2)
+		{	
+			var res = [];
+			
+			for(var i = 0; i < mass1.length; i++)
+			{
+				res[i] = mass1[i];
+			}
+			for(var k = 0; k < mass2.length; k++)
+			{
+				if (!norepeat(mass2[k], res))
+				{
+					res.push(mass2[k]);
+				}
+			}
+			return res;
+		}
+		
+		function resulting()
+		{
+			arr1 = document.getElementById('arr1').value.split(/\s/);
+			arr2 = document.getElementById('arr2').value.split(/\s/);
+			newarr1 = union(arr1, arr2);
+			document.getElementById('resultCalc').innerHTML = newarr1;
+		}
+		
+		function test()
+		{
+			console.log('666 gaz');
+		}
+		
+		function test1()
+		{
+			console.log('777 lolga');
+		}
+		</script>
+		<form>
+			<br>
+			Массив 1:<input type = '' id = 'arr1'/>
+			<br>
+			Массив 2:<input type = '' id = 'arr2'/>
+			<br>
+			<input type = 'button' value = 'Рассчитать' onclick = "test(), test1(), resulting()">
+		<form>
+		<br>
+		объединение:<div id = 'resultCalc'>
+		<br>
+</body>
+</html>

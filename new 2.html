@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Prototype 1 lab of JS</title>
+</head>
+<body>
+
+	<script>
+		var masss1 = [1, 2, 3, 4];
+		var masss2 = [1, 2, 3, 5, 6];
+		var newmasss = [];
+		var keyh = 0;
+		
+		/*function resultt(fmas)
+		{
+			for(var i = 0; i < fmas.length; i++)
+			{
+				document.write(fmas[i]);
+			}
+		}*/
+		
+		function norepeat(cvalue, farr) 
+		{
+			for(var k = 0; k < farr.length; k++)
+			{
+				if(cvalue == farr[k])
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+		
+		function myunion(mass1, mass2)
+		{	
+			var res = [];
+			for(var i = 0; i < mass1.length; i++)
+			{
+				res[i] = mass1[i];
+			}
+			//console.log(res);
+			for(var k = 0; k < mass2.length; k++)
+			{
+				if (!norepeat(mass2[k], res))
+				{
+					res.push(mass2[k]);
+				}
+			}
+			return res;
+		}
+		
+		newmasss = myunion(masss1, masss2);
+		console.log(newmasss);
+	</script>
+		
+</body>
+</html>

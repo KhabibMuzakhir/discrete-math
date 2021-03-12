@@ -1,0 +1,134 @@
+<html>
+<head>
+	<title>Prototype 1 lab of JS</title>
+</head>
+<body>
+
+	<script>
+		var arr1;
+		var arr2;
+		var newarr1 = [];
+		var newarr2 = [];
+		var newarr3 = [];
+		var newarr4 = [];
+		
+		function norepeat(cvalue, farr) 
+		{
+			for(var k = 0; k < farr.length; k++)
+			{
+				if(cvalue == farr[k])
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		function union(mass1, mass2)
+		{	
+			var res = [];
+			
+			for(var i = 0; i < mass1.length; i++)
+			{
+				res[i] = mass1[i];
+			}
+			for(var k = 0; k < mass2.length; k++)
+			{
+				if (!norepeat(mass2[k], res))
+				{
+					res.push(mass2[k]);
+				}
+			}
+			return res;
+		}
+		
+		function inArray(elem, arr)
+		{
+			return arr.indexOf(elem) != -1;
+		}
+		
+		function getInt(marr1, marr2)
+		{
+			let result = [];
+	
+			for (let elem of marr1) 
+			{
+				if (inArray(elem, marr2)) 
+				{
+					result.push(elem);
+				}
+			}
+			return result;
+		}
+		
+		function getDiff(arr1, arr2)
+		{
+			let newarr;
+			let diff1 = getFirstCheck(arr1, arr2);
+			let diff2 = getFirstCheck(arr2, arr1);
+			
+			return [].concat(diff1, diff2);
+		}
+
+		function getFirstCheck(arr1, arr2)
+		{
+			let result = [];
+			for (let elem of arr1) 
+			{
+				if (!inArray(elem, arr2)) 
+				{
+					result.push(elem);
+				}
+			}
+			return result;
+		}
+		
+		function notSymmetricDiff(arr1, arr2)
+		{
+			let result = [];
+			result = getFirstCheck(arr1, arr2);
+			return result
+		}
+		
+		function resulting()
+		{
+			arr1 = document.getElementById('arr1').value.split(" ");
+			arr2 = document.getElementById('arr2').value.split(" ");
+			
+			//arr1 = document.getElementById('arr1').value.split(/\s/);
+			//arr2 = document.getElementById('arr2').value.split(/\s/);
+			
+			newarr1 = union(arr1, arr2);
+			document.getElementById('resultCalc1').innerHTML = newarr1;
+			
+			newarr2 = getInt(arr1, arr2);
+			document.getElementById('resultCalc2').innerHTML = newarr2;
+			
+			newarr3 = getDiff(arr1, arr2);
+			document.getElementById('resultCalc3').innerHTML = newarr3;
+			
+			newarr4 = notSymmetricDiff(arr1, arr2);
+			document.getElementById('resultCalc4').innerHTML = newarr4;
+		}
+		</script>
+		<form>
+			<br>
+			Массив 1:<input type = '' id = 'arr1'/>
+			<br>
+			Массив 2:<input type = '' id = 'arr2'/>
+			<br>
+			<input type = 'button' value = 'Рассчитать' onclick = "resulting()">
+		<form>
+		<br>
+		объединение:<div id = 'resultCalc1'>
+		</div>
+		пересечение:<div id = 'resultCalc2'>
+		</div>
+		симметрическая разность:<div id = 'resultCalc3'>
+		</div>
+		</div>
+		разность:<div id = 'resultCalc4'>
+		</div>
+		<br>
+</body>
+</html>

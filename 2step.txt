@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Prototype 1 lab of JS</title>
+</head>
+<body>
+
+	<script>
+		var masss1 = [4, 3, 1, 2];
+		var masss2 = [1, 2, 6, 5];
+		var newmasss;
+		var keyh;
+		function khaoutput(mass)
+		{
+			for(var i = 0; i < mass.length; i++)
+			{
+			document.write(mass[i]);
+			}
+		}
+		function dissablrepeatingarray(mass1, mass2)
+		{
+			for(var i = 0; i < mass1.length; i++)
+			{
+				for(var k = 0; k < mass2.length; k++)
+				{
+					if (mass1[i] == mass2[k])
+					{
+						document.write('найдено совпадение:' + ' ' + mass1[i]);
+					}
+				}
+			}
+		}
+		dissablrepeatingarray(masss1, masss2);
+		
+	</script>
+		
+</body>
+</html>

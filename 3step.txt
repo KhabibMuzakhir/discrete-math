@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Prototype 1 lab of JS</title>
+</head>
+<body>
+
+	<script>
+		var masss1 = [1, 2, 3, 4];
+		var masss2 = [1, 2, 3, 5];
+		var newmasss = [];
+		var keyh = 0;
+		function resultt(fmas)
+		{
+			for(var i = 0; i < fmas.length; i++)
+			{
+				document.write(fmas[i]);
+			}
+		}
+		
+		function dissablrepeatingarray(mass1, mass2, newmass)
+		{
+			for(var i = 0; i < mass1.length; i++)
+			{
+				for(var k = 0; k < mass2.length; k++)
+				{
+					if (mass1[i] != mass2[k])
+					{
+						newmass[keyh] = mass2[k];
+						keyh++;
+					}
+				}
+			}
+		}
+		dissablrepeatingarray(masss1, masss2, newmasss);
+		resultt(newmasss);
+		
+	</script>
+		
+</body>
+</html>
